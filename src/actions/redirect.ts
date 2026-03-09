@@ -6,7 +6,7 @@ import { ActionExecutor } from './types.js';
  */
 export function redirect(url: string, statusCode: number = 302): ActionExecutor {
   return {
-    execute(match: AiCrawlerMatch, request?: Request): Response {
+    execute(_match: AiCrawlerMatch, _request?: Request): Response {
       return new Response(null, {
         status: statusCode,
         headers: {
@@ -28,7 +28,7 @@ export function redirectWithMessage(
   statusCode: number = 302
 ): ActionExecutor {
   return {
-    execute(match: AiCrawlerMatch, request?: Request): Response {
+    execute(_match: AiCrawlerMatch, _request?: Request): Response {
       return new Response(message, {
         status: statusCode,
         headers: {

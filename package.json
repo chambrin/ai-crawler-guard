@@ -7,19 +7,19 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     },
     "./middleware": {
+      "types": "./dist/middleware/index.d.ts",
       "import": "./dist/middleware/index.mjs",
-      "require": "./dist/middleware/index.js",
-      "types": "./dist/middleware/index.d.ts"
+      "require": "./dist/middleware/index.js"
     },
     "./robots-txt": {
+      "types": "./dist/robots-txt/index.d.ts",
       "import": "./dist/robots-txt/index.mjs",
-      "require": "./dist/robots-txt/index.js",
-      "types": "./dist/robots-txt/index.d.ts"
+      "require": "./dist/robots-txt/index.js"
     }
   },
   "files": [

@@ -21,7 +21,7 @@ const IMAGE_PATHS = ['/images', '/img', '/assets', '/static', '/media'];
  */
 export function blockImages(): ActionExecutor {
   return {
-    execute(match: AiCrawlerMatch, request?: Request): Response | void {
+    execute(_match: AiCrawlerMatch, request?: Request): Response | void {
       if (!request) return;
 
       const url = new URL(request.url);
@@ -56,7 +56,7 @@ export function blockImages(): ActionExecutor {
  */
 export function blockImagesForPaths(paths: string[]): ActionExecutor {
   return {
-    execute(match: AiCrawlerMatch, request?: Request): Response | void {
+    execute(_match: AiCrawlerMatch, request?: Request): Response | void {
       if (!request) return;
 
       const url = new URL(request.url);
