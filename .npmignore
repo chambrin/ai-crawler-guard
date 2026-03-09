@@ -1,0 +1,30 @@
+# Source files
+src/
+examples/
+tests/
+
+# Config files
+tsconfig.json
+.gitignore
+claude.md
+
+# CI/CD
+.github/
+
+# Development
+node_modules/
+coverage/
+.nyc_output/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
