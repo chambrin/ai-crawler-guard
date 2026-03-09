@@ -1,7 +1,7 @@
 // Next.js App Router Example
 // File: middleware.ts
 
-import { nextMiddleware } from '@ai-crawler-guard/core';
+import { nextMiddleware } from '@chambrin/ai-crawler-guard/core';
 
 export const config = {
   matcher: [
@@ -26,7 +26,7 @@ export default nextMiddleware({
 });
 
 // Alternative: Custom middleware with advanced logic
-// import { createNextMiddleware, blockImages, log, redirect } from '@ai-crawler-guard/core';
+// import { createNextMiddleware, blockImages, log, redirect } from '@chambrin/ai-crawler-guard/core';
 //
 // export default createNextMiddleware((guard, config) => {
 //   guard
@@ -43,7 +43,7 @@ export default nextMiddleware({
 // File: app/robots.txt/route.ts
 // ====================================
 
-import { generateRobotsTxt } from '@ai-crawler-guard/robots-txt';
+import { generateRobotsTxt } from '@chambrin/ai-crawler-guard/robots-txt';
 
 export async function GET() {
   const robotsTxt = generateRobotsTxt({
@@ -62,7 +62,7 @@ export async function GET() {
 // File: app/api/check-bot/route.ts
 // ====================================
 
-import { detectAiCrawler } from '@ai-crawler-guard/core';
+import { detectAiCrawler } from '@chambrin/ai-crawler-guard/core';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest) {

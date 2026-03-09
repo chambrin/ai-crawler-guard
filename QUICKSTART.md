@@ -5,7 +5,7 @@ Get started with AI Crawler Guard in 5 minutes.
 ## Installation
 
 ```bash
-npm install ai-crawler-guard
+npm install @chambrin/ai-crawler-guard
 ```
 
 ## Basic Usage
@@ -15,7 +15,7 @@ npm install ai-crawler-guard
 Create a `middleware.ts` file in your project root:
 
 ```typescript
-import { nextMiddleware } from 'ai-crawler-guard';
+import { nextMiddleware } from '@chambrin/ai-crawler-guard';
 
 export const config = {
   matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
@@ -31,7 +31,7 @@ export default nextMiddleware({
 
 ```typescript
 import express from 'express';
-import { expressMiddleware } from 'ai-crawler-guard';
+import { expressMiddleware } from '@chambrin/ai-crawler-guard';
 
 const app = express();
 
@@ -46,7 +46,7 @@ app.listen(3000);
 
 ```typescript
 import { Hono } from 'hono';
-import { honoMiddleware } from 'ai-crawler-guard';
+import { honoMiddleware } from '@chambrin/ai-crawler-guard';
 
 const app = new Hono();
 
@@ -62,7 +62,7 @@ export default app;
 ### 1. Block All AI Crawlers
 
 ```typescript
-import { nextMiddleware } from 'ai-crawler-guard';
+import { nextMiddleware } from '@chambrin/ai-crawler-guard';
 
 export default nextMiddleware({
   redirectUrls: {
@@ -76,7 +76,7 @@ export default nextMiddleware({
 ### 2. Block Only Images
 
 ```typescript
-import { nextMiddleware } from 'ai-crawler-guard';
+import { nextMiddleware } from '@chambrin/ai-crawler-guard';
 
 export default nextMiddleware({
   blockImagesFor: ['gptbot', 'claudebot', 'perplexitybot'],
@@ -92,7 +92,7 @@ import {
   blockImages,
   redirect,
   log,
-} from 'ai-crawler-guard';
+} from '@chambrin/ai-crawler-guard';
 
 export default async function middleware(request: Request) {
   const match = detectAiCrawler(request);
@@ -112,7 +112,7 @@ export default async function middleware(request: Request) {
 
 ```typescript
 // app/robots.txt/route.ts (Next.js)
-import { generateRobotsTxt } from 'ai-crawler-guard/robots-txt';
+import { generateRobotsTxt } from '@chambrin/ai-crawler-guard/robots-txt';
 
 export async function GET() {
   const robotsTxt = generateRobotsTxt({

@@ -8,8 +8,8 @@ import {
   blockImages,
   redirect,
   log,
-} from '@ai-crawler-guard/core';
-import { generateRobotsTxt } from '@ai-crawler-guard/robots-txt';
+} from '@chambrin/ai-crawler-guard/core';
+import { generateRobotsTxt } from '@chambrin/ai-crawler-guard/robots-txt';
 
 const app = new Hono();
 

@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial release of @ai-crawler-guard
+- Initial release of @chambrin/ai-crawler-guard
 - Core detection engine for AI crawlers
 - Support for detecting:
   - GPTBot (OpenAI)

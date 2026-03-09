@@ -5,7 +5,7 @@
 // File: src/hooks.server.ts
 // ====================================
 
-import { detectAiCrawler, AiCrawlerGuard, blockImages, log } from 'ai-crawler-guard/core';
+import { detectAiCrawler, AiCrawlerGuard, blockImages, log } from '@chambrin/ai-crawler-guard/core';
 import type { Handle } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ event, resolve }) => {
@@ -46,7 +46,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 // File: src/routes/api/data/+server.ts
 // ====================================
 
-import { detectAiCrawler } from 'ai-crawler-guard/core';
+import { detectAiCrawler } from '@chambrin/ai-crawler-guard/core';
 import { json, error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
@@ -69,7 +69,7 @@ export const GET: RequestHandler = async ({ request }) => {
 // File: src/routes/robots.txt/+server.ts
 // ====================================
 
-import { generateRobotsTxt } from 'ai-crawler-guard/robots-txt';
+import { generateRobotsTxt } from '@chambrin/ai-crawler-guard/robots-txt';
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = () => {
@@ -89,7 +89,7 @@ export const GET: RequestHandler = () => {
 // File: src/routes/premium/+page.server.ts
 // ====================================
 
-import { detectAiCrawler } from 'ai-crawler-guard/core';
+import { detectAiCrawler } from '@chambrin/ai-crawler-guard/core';
 import { redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
@@ -111,7 +111,7 @@ export const load: PageServerLoad = async ({ request }) => {
 // File: src/routes/api/check-bot/+server.ts
 // ====================================
 
-import { detectAiCrawler } from 'ai-crawler-guard/core';
+import { detectAiCrawler } from '@chambrin/ai-crawler-guard/core';
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
@@ -132,7 +132,7 @@ export const GET: RequestHandler = async ({ request }) => {
 // File: src/routes/images/[...path]/+server.ts
 // ====================================
 
-import { detectAiCrawler } from 'ai-crawler-guard/core';
+import { detectAiCrawler } from '@chambrin/ai-crawler-guard/core';
 import { error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
@@ -159,7 +159,7 @@ export const GET: RequestHandler = async ({ request, params }) => {
 // File: src/hooks.server.ts (Advanced)
 // ====================================
 
-import { detectAiCrawler } from 'ai-crawler-guard/core';
+import { detectAiCrawler } from '@chambrin/ai-crawler-guard/core';
 import type { Handle } from '@sveltejs/kit';
 
 const botVisits: any[] = [];

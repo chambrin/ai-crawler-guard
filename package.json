@@ -1,5 +1,5 @@
 {
-  "name": "ai-crawler-guard",
+  "name": "@chambrin/ai-crawler-guard",
   "version": "0.1.0",
   "description": "Detect and control AI crawlers (GPTBot, ClaudeBot, PerplexityBot) with configurable actions",
   "main": "./dist/index.js",

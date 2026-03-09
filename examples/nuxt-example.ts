@@ -5,7 +5,7 @@
 // File: server/middleware/ai-guard.ts
 // ====================================
 
-import { h3Middleware } from 'ai-crawler-guard/core';
+import { h3Middleware } from '@chambrin/ai-crawler-guard/core';
 
 export default h3Middleware({
   blockImagesFor: ['gptbot', 'claudebot'],
@@ -21,7 +21,7 @@ export default h3Middleware({
 // File: server/api/data.get.ts
 // ====================================
 
-import { detectAiCrawler } from 'ai-crawler-guard/core';
+import { detectAiCrawler } from '@chambrin/ai-crawler-guard/core';
 
 export default defineEventHandler((event) => {
   const userAgent = getHeader(event, 'user-agent') || '';
@@ -44,7 +44,7 @@ export default defineEventHandler((event) => {
 // File: server/routes/robots.txt.get.ts
 // ====================================
 
-import { generateRobotsTxt } from 'ai-crawler-guard/robots-txt';
+import { generateRobotsTxt } from '@chambrin/ai-crawler-guard/robots-txt';
 
 export default defineEventHandler(() => {
   const robotsTxt = generateRobotsTxt({
@@ -65,7 +65,7 @@ import {
   blockImages,
   redirect,
   log,
-} from 'ai-crawler-guard/core';
+} from '@chambrin/ai-crawler-guard/core';
 
 export default defineEventHandler(async (event) => {
   const userAgent = getHeader(event, 'user-agent') || '';
@@ -94,7 +94,7 @@ export default defineEventHandler(async (event) => {
 // File: composables/useBotDetection.ts
 // ====================================
 
-import { detectAiCrawler } from 'ai-crawler-guard/core';
+import { detectAiCrawler } from '@chambrin/ai-crawler-guard/core';
 
 export const useBotDetection = () => {
   const checkIfBot = async () => {

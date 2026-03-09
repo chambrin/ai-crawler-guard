@@ -1,4 +1,4 @@
-# @ai-crawler-guard
+# @chambrin/ai-crawler-guard
 
 > Detect and control AI crawlers (GPTBot, ClaudeBot, PerplexityBot, etc.) with configurable server-side actions.
 
@@ -18,7 +18,7 @@ A lightweight, framework-agnostic TypeScript library to detect AI crawlers and e
 ## Installation
 
 ```bash
-npm install ai-crawler-guard
+npm install @chambrin/ai-crawler-guard
 ```
 
 ## Quick Start
@@ -27,7 +27,7 @@ npm install ai-crawler-guard
 
 ```typescript
 // middleware.ts
-import { nextMiddleware } from '@ai-crawler-guard/core';
+import { nextMiddleware } from '@chambrin/ai-crawler-guard';
 
 export const config = {
   matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
@@ -46,7 +46,7 @@ export default nextMiddleware({
 
 ```typescript
 import express from 'express';
-import { expressMiddleware } from '@ai-crawler-guard/core';
+import { expressMiddleware } from '@chambrin/ai-crawler-guard/core';
 
 const app = express();
 
@@ -60,7 +60,7 @@ app.use(expressMiddleware({
 
 ```typescript
 import { Hono } from 'hono';
-import { honoMiddleware } from '@ai-crawler-guard/core';
+import { honoMiddleware } from '@chambrin/ai-crawler-guard/core';
 
 const app = new Hono();
 
@@ -76,7 +76,7 @@ app.use('*', honoMiddleware({
 
 ```typescript
 // server/middleware/ai-guard.ts
-import { h3Middleware } from '@ai-crawler-guard/core';
+import { h3Middleware } from '@chambrin/ai-crawler-guard/core';
 
 export default h3Middleware({
   blockImagesFor: ['gptbot', 'claudebot'],
@@ -93,7 +93,7 @@ export default h3Middleware({
 Detect AI crawler from a Web Request object.
 
 ```typescript
-import { detectAiCrawler } from '@ai-crawler-guard/core';
+import { detectAiCrawler } from '@chambrin/ai-crawler-guard/core';
 
 const match = detectAiCrawler(request);
 
@@ -157,7 +157,7 @@ Actions are composable functions that execute when an AI crawler is detected.
 Block all image requests with 403 Forbidden.
 
 ```typescript
-import { AiCrawlerGuard, blockImages } from '@ai-crawler-guard/core';
+import { AiCrawlerGuard, blockImages } from '@chambrin/ai-crawler-guard/core';
 
 const guard = new AiCrawlerGuard()
   .addAction(blockImages());
@@ -192,7 +192,7 @@ guard.addAction(textOnly());
 The `AiCrawlerGuard` class manages a pipeline of actions.
 
 ```typescript
-import { AiCrawlerGuard, detectAiCrawler, blockImages, redirect, log } from '@ai-crawler-guard/core';
+import { AiCrawlerGuard, detectAiCrawler, blockImages, redirect, log } from '@chambrin/ai-crawler-guard/core';
 
 const guard = new AiCrawlerGuard()
   .addAction(log('info'))
@@ -227,7 +227,7 @@ interface AiCrawlerConfig {
 Generate robots.txt content based on configuration.
 
 ```typescript
-import { generateRobotsTxt } from '@ai-crawler-guard/robots-txt';
+import { generateRobotsTxt } from '@chambrin/ai-crawler-guard/robots-txt';
 
 const robotsTxt = generateRobotsTxt({
   blockImagesFor: ['gptbot', 'claudebot'],
@@ -247,7 +247,7 @@ import {
   defaultAiBotsRobotsTxt,
   blockImagesPreset,
   blockGPTBotOnly
-} from '@ai-crawler-guard/robots-txt';
+} from '@chambrin/ai-crawler-guard/robots-txt';
 
 // Block all AI crawlers completely
 console.log(defaultAiBotsRobotsTxt);
@@ -287,7 +287,7 @@ Additional bots detected with lower confidence:
 Create your own action executor:
 
 ```typescript
-import { ActionExecutor, AiCrawlerMatch } from '@ai-crawler-guard/core';
+import { ActionExecutor, AiCrawlerMatch } from '@chambrin/ai-crawler-guard/core';
 
 function customBlock(): ActionExecutor {
   return {
@@ -308,7 +308,7 @@ const guard = new AiCrawlerGuard()
 Extend the known bots list:
 
 ```typescript
-import { DEFAULT_KNOWN_BOTS } from '@ai-crawler-guard/core';
+import { DEFAULT_KNOWN_BOTS } from '@chambrin/ai-crawler-guard/core';
 
 const customConfig = {
   knownBots: {
@@ -322,7 +322,7 @@ const customConfig = {
 ### Next.js Custom Middleware
 
 ```typescript
-import { createNextMiddleware, blockImages, log } from '@ai-crawler-guard/core';
+import { createNextMiddleware, blockImages, log } from '@chambrin/ai-crawler-guard/core';
 
 export default createNextMiddleware((guard, config) => {
   guard
@@ -398,5 +398,5 @@ Contributions are welcome! Please open an issue or submit a pull request.
 ## Links
 
 - [GitHub Repository](https://github.com/chambrin/ai-crawler-guard)
-- [NPM Package](https://www.npmjs.com/package/@ai-crawler-guard)
+- [NPM Package](https://www.npmjs.com/package/@chambrin/ai-crawler-guard)
 - [Issues](https://github.com/chambrin/ai-crawler-guard/issues)

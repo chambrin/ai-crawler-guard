@@ -8,8 +8,8 @@ import {
   blockImages,
   redirect,
   log,
-} from '@ai-crawler-guard/core';
-import { generateRobotsTxt, defaultAiBotsRobotsTxt } from '@ai-crawler-guard/robots-txt';
+} from '@chambrin/ai-crawler-guard/core';
+import { generateRobotsTxt, defaultAiBotsRobotsTxt } from '@chambrin/ai-crawler-guard/robots-txt';
 
 const app = express();
 const PORT = 3000;
